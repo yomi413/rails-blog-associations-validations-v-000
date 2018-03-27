@@ -2,4 +2,12 @@
 
 <%= render 'form' %>
 
+<p>Name: <%= @post.name %></p>
+<p>Content: <%= @post.content %></p>
+
+
+
 <%= link_to 'Back', posts_path %>
+<%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+  <%= tag.label {tag.check_box} %>
+<% end %>
